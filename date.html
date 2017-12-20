@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+	<span></span>天<span></span>时<span></span>分<span></span>秒
+	</div>
+
+
+
+
+	<canvas >
+		
+		替换内容
+	</canvas>
+</body>
+</html>
+<script>
+	
+
+
+
+let date = new Date(2017,11,25,12,30,0);
+move();
+setInterval(move,1000);
+function move(){
+	let arr=[];
+	let now = new Date();
+	let time = Math.floor(date.getTime() - now.getTime())/1000;
+	let day = Math.floor(time/60/60/24);
+	arr.push(day);
+	let hour = Math.floor(time/60/60%24);
+	arr.push(hour);
+	let minite = Math.floor(time/60%60);
+	arr.push(minite);
+	let s = Math.floor(time%60);
+	arr.push(s);
+	let span=document.querySelectorAll('span');
+	span.forEach(function(ele,xia){
+		span[xia].innerText=arr[xia];
+	});
+}
+
+
+
+
+
+
+
+
+
+
+// let date=new Date(2017,11,25,12,30,00);
+// console.log(date);
+
+
+
+
+
+
+
+
+
+</script>
